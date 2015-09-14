@@ -1,0 +1,13 @@
+{
+    "name": "Laravie Forum",
+    "description": "Forum Extension for Orchestra Platform",
+    "author": "Mior Muhammad Zaki",
+    "url": "https://github.com/laravie/forum",
+    "version": "1.0.x",
+    "config": {
+        "handles": "forum"
+    },
+    "provides": [
+        "Laravie\\Forum\\ForumServiceProvider"
+    ]
+}
