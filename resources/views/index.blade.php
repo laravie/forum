@@ -1,0 +1,1 @@
+@extends('laravie/forum::layout')

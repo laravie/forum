@@ -1,9 +1,13 @@
 <?php namespace Laravie\Forum;
 
+use Illuminate\Routing\Router;
+use Orchestra\Support\Providers\Traits\PackageProviderTrait;
 use Orchestra\Foundation\Support\Providers\ExtensionRouteServiceProvider;
 
 class ForumServiceProvider extends ExtensionRouteServiceProvider
 {
+    use PackageProviderTrait;
+
     /**
      * The application or extension namespace.
      *
@@ -24,6 +28,21 @@ class ForumServiceProvider extends ExtensionRouteServiceProvider
      * @var string
      */
     protected $routePrefix = 'forum';
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @param  \Illuminate\Http\Router  $router
+     * @return void
+     */
+    public function boot(Router $router)
+    {
+        $path = realpath(__DIR__.'/../resources');
+
+        parent::boot($router);
+
+        $this->addViewComponent('laravie/forum', 'laravie/forum', "{$path}/views");
+    }
 
     /**
      * Map extension routes.

@@ -1,5 +1,7 @@
 <?php namespace Laravie\Forum\Model;
 
+use Orchestra\Model\Eloquent;
+
 class Topic extends Eloquent
 {
     /**

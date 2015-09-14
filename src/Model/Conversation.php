@@ -30,4 +30,9 @@ class Conversation extends Eloquent
     {
         return $this->belongsTo(config('auth.model'), 'user_id');
     }
+
+    public function scopeLatest($query)
+    {
+        $query->orderBy('updated_at', 'DESC');
+    }
 }
