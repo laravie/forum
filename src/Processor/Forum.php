@@ -9,6 +9,7 @@ class Forum
      * Get forum listing.
      *
      * @param  object  $listener
+     *
      * @return mixed
      */
     public function index($listener)
